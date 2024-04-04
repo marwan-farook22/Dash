@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import Userlayout from "./UserPage/Userlayout";
+import Adminlayout from "./AdminPage/Adminlayout";
+import axios from "axios";
+import { useState } from "react";
 
 const App = () => {
   return (
-    <div className="text-red-700">
-      App
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/*" element={<Userlayout />} />
+      <Route path="/admin/*" element={<Adminlayout />} />
+    </Routes>
   );
 };
 
